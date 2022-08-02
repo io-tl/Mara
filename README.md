@@ -1,8 +1,8 @@
 # MARA
 
-MARA is a proof of concept tool waiting for shell execution with associated pty/tty using netlink socket and sniff user's terminal, as a static binary it works well with in memory execution using DEGU.
+MARA is a proof of concept tool waiting for shell execution with associated pty/tty using netlink socket to sniff user's terminal, as a static binary it works well with in memory execution using DEGU.
 
-Concept behind this project comes from emptymonkey method of mitm a terminal ( look at https://github.com/emptymonkey/shelljack project ) to intercept and log user session (including ssh session passwd sudo su passwords etc.)
+Concept behind this project comes from emptymonkey method of mitm a terminal ( look at [shelljack](https://github.com/emptymonkey/shelljack) project ) to intercept and log user session (including ssh session passwd sudo su passwords etc.)
 
 To build it you need musl-gcc with musl kernel-headers for netlink objects
 

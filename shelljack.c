@@ -81,6 +81,7 @@ int shelljack(int target_pid,char *filename){
 	 * We're going to mess around with hijacking the tty for a login shell. SIGHUP is a certainty.
 	 */
 	signal(SIGHUP, SIG_IGN);
+	signal(SIGCHLD, SIG_IGN);
 	//signal(SIGHUP, SA_NOCLDWAIT);
 
 	/*
@@ -96,7 +97,8 @@ int shelljack(int target_pid,char *filename){
 	}
 
 	if(retval){
-		wait(NULL);
+		int status;
+		waitpid(retval, &status, WNOHANG);
 		return(0);
 	}
 

@@ -1,4 +1,4 @@
-CC = gcc
+CC = musl-gcc
 CFLAGS = -std=gnu99 -Wall -Wextra -pedantic -O3
 AR = ar
 ARFLAGS = rcs

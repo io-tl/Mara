@@ -89,7 +89,7 @@ int handle(struct proc_event proc_ev){
         }
 
         // stdin in tty/pty and not socket/pipe ?
-        if ((sret = strstr(pty,"/dev/")) == NULL)
+        if ((sret = strstr(pty,"/dev/pts")) == NULL)
             return -1;
 
         if ((ret = sprintf(map,"/proc/%d/maps",proc_ev.event_data.id.process_pid)) < 0 ){
